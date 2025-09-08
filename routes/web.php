@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\SubjectController;
 use App\Models\Student;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Route;
@@ -63,3 +64,8 @@ use App\Models\Teachers;
     Route::prefix('student')->controller(StudentController::class)->group(function () {
 Route::get('/', 'index');
 });
+
+Route::prefix('subject')->controller(SubjectController::class)->group(function(){
+Route::get('/','index');
+});
+
